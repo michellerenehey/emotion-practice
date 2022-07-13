@@ -1,9 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+
+const Heading = styled("h1")`
+  background-color: ${(props) => props.bg};
+  color: ${(props) => props.fg};
+`;
 
 function App() {
   return (
     <div>
+      <div>
+        <Heading bg="#008f68" fg="#fae042">
+          Heading with a green background and yellow text.
+        </Heading>
+      </div>
       <div
         css={css({
           margin: 10,
