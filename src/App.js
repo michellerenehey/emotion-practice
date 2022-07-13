@@ -7,14 +7,25 @@ const Heading = styled("h1")`
   color: ${(props) => props.fg};
 `;
 
+const Subheading = Heading.withComponent("h2");
+
+const Quote = styled("blockquote")((props) => ({
+  fontSize: props.size,
+}));
+
 function App() {
   return (
     <div>
-      <div>
-        <Heading bg="#008f68" fg="#fae042">
-          Heading with a green background and yellow text.
-        </Heading>
-      </div>
+      <Heading bg="#008f68" fg="#fae042">
+        Heading with a green background and yellow text.
+      </Heading>
+      <Subheading fg="#6db65b">
+        Subheading with light green text (foreground).
+      </Subheading>
+      <Quote size={28}>
+        I built this with <code>`emotion/react`</code> and{" "}
+        <code>`emotion/styled`</code>!
+      </Quote>
       <div
         css={css({
           margin: 10,
